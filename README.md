@@ -15,3 +15,15 @@ EOF
 
 $
 ```
+
+## Test
+
+```sh
+nimble test
+```
+
+## References
+
+- [Tiny your cli utilities in pure Nim - githu.com](https://github.com/jiro4989/yourutils)
+- [NimでオレオレCLIツールを作った - Qiita](https://qiita.com/jiro4989/items/14709e35ef46189a6704)
+- [NimでGitHubのリポジトリ検索ツールを作ってみた](https://blog.mamansoft.net/2018/04/22/nim-github-search-tool/)

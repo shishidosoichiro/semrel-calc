@@ -1,0 +1,8 @@
+.DS_Store
+
+/dist/
+/tests/test_*
+!/tests/test_*.nim
+/semrelcalc
+/semrelcalc.exe
+/bin/
