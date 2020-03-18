@@ -6,3 +6,6 @@
 /semrelcalc
 /semrelcalc.exe
 /bin/
+/nimcache/
+/coverage/
+/lcov.info
