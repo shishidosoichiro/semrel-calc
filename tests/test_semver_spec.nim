@@ -84,7 +84,7 @@ suite "Semantic Versioning 2.0.0 spec":
       check v"1.0.0-alpha+001" == v"1.0.0-alpha+001"
       check v"1.0.0+20130313144700" == v"1.0.0+20130313144700"
       check v"1.0.0-beta+exp.sha.5114f85" == v"1.0.0-beta+exp.sha.5114f85"
-      check v"1.0.0+21AF26D3----117B344092BD"== v"1.0.0+21AF26D3----117B344092BD"
+      check v"1.0.0+21AF26D3----117B344092BD" == v"1.0.0+21AF26D3----117B344092BD"
 
   suite "Precedence":
     # 1. Precedence refers to how versions are compared to each other when ordered.
