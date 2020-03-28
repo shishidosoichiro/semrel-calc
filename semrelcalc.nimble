@@ -31,3 +31,6 @@ task dist, "Build distributions":
 task coverage, "Generate code coverage report":
   echo "Generate code coverage report"
   exec "coco --target \"tests/**/*.nim\" --cov '!tests' --compiler=\"--hints:off -d:release\" "
+
+task clean, "Clean":
+  exec "git clean -fdX"
