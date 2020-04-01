@@ -1,0 +1,62 @@
+version: 2
+jobs:
+  macosx:
+    docker:
+      - image: nimlang/nim:latest
+    working_directory: /usr/src/semrelcalc
+    steps:
+      - checkout
+      - run:
+          name: provision
+          command: provision/linux/macosx.sh
+      - run:
+          name: nimble
+          command: nimble install -y
+      - run:
+          name: build
+          command: |
+            export PATH="$PATH:/usr/src/semrelcalc/osxcross/target/bin";
+            nimble macosx
+      - store_artifacts:
+          path: /usr/src/semrelcalc/dist/semrelcalc-0.1.0-macosx-amd64.tar.gz
+  linux:
+    docker:
+      - image: nimlang/nim:latest
+    working_directory: /usr/src/semrelcalc
+    steps:
+      - checkout
+      - run:
+          name: provision
+          command: provision/linux/linux.sh
+      - run:
+          name: nimble
+          command: nimble install -y
+      - run:
+          name: build
+          command: nimble linux
+      - store_artifacts:
+          path: /usr/src/semrelcalc/dist/semrelcalc-0.1.0-linux-amd64.tar.gz
+  windows:
+    docker:
+      - image: nimlang/nim:latest
+    working_directory: /usr/src/semrelcalc
+    steps:
+      - checkout
+      - run:
+          name: provision
+          command: provision/linux/windows.sh
+      - run:
+          name: nimble
+          command: nimble install -y
+      - run:
+          name: build
+          command: nimble windows
+      - store_artifacts:
+          path: /usr/src/semrelcalc/dist/semrelcalc-0.1.0-windows-amd64.zip
+workflows:
+  version: 2
+  build:
+    jobs:
+      - macosx
+      - linux
+      - windows

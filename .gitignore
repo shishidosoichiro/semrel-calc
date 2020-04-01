@@ -9,3 +9,4 @@
 /nimcache/
 /coverage/
 /lcov.info
+.env
